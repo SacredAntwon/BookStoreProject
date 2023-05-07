@@ -20,8 +20,8 @@ Step 4) Install all libraries in the requirements.txt: "pip3 install -r requirem
 
 ### Running the Code
 
-<Stuff goes here for how to run the code>
+Stuff goes here for how to run the code
 
 ### Using FastAPI Docs to Test
 
-<How to use the FastAPI Docs to test the code>
+How to use the FastAPI Docs to test the code
