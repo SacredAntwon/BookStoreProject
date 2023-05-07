@@ -22,7 +22,7 @@ Step 4) Install all libraries in the requirements.txt: "pip3 install -r requirem
 
 Step 1) Have MongoDB and MongoDB Compass installed
 
-Step 2) Start MongoDB by typing `brew services start mongodb-community@6.0`.
+Step 2) Start MongoDB on Mac by typing `brew services start mongodb-community@6.0` in the terminal.
 
 Step 3) Launch MongoDB Compass and connect to the Database.
 
@@ -46,3 +46,7 @@ Step 2) Navigate to http://localhost:8000/docs and fill in the required
 fields in order to test the API functionality.
 
 Step 3) Look at the MongoDB database to find the Ids for certain books.
+
+### Closing Database
+
+Close the database on Mac by typing `brew services stop mongodb-community@6.0` in the terminal.
