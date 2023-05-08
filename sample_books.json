@@ -4,35 +4,48 @@
       "author": "Harper Lee",
       "description": "A classic American novel that deals with issues of racial injustice and moral growth.",
       "price": 9.99,
-      "stock": 50
+      "stock": 50,
+      "sales": 25
     },
     {
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
       "description": "A romantic novel following the emotional development of protagonist Elizabeth Bennet.",
       "price": 12.99,
-      "stock": 30
+      "stock": 30,
+      "sales": 50
     },
     {
       "title": "1984",
       "author": "George Orwell",
       "description": "A dystopian novel presenting a world with omnipresent government surveillance and public manipulation.",
       "price": 14.99,
-      "stock": 45
+      "stock": 45,
+      "sales": 75
     },
     {
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
       "description": "A story about teenage angst and alienation, following the experiences of protagonist Holden Caulfield.",
       "price": 10.99,
-      "stock": 25
+      "stock": 25,
+      "sales": 100
     },
     {
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
       "description": "A novel set in the Jazz Age, exploring themes of decadence, idealism, and social upheaval.",
       "price": 13.99,
-      "stock": 40
+      "stock": 40,
+      "sales": 125
+    },
+    {
+      "title": "Another Book",
+      "author": "F. Scott Fitzgerald",
+      "description": "A different description",
+      "price": 25.99,
+      "stock": 80,
+      "sales": 4000
     }
   ]
   

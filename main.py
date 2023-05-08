@@ -18,6 +18,7 @@ class Book(BaseModel):
     description: str
     price: float
     stock: int
+    sales: int
 
 class BookInDB(Book):
     id: str
@@ -37,17 +38,7 @@ async def startup_event():
 async def get_total_stock():
     cursor = books_collection.aggregate([{"$group": {"_id": None, "total_books": {"$sum": "$stock"}}}])
     result = await cursor.to_list(length=1)
-    return result[0] if result else {"total_books": 0}
-
-##### TO DO #####
-##### FIGURE WHICH VERSION TO USE FOR AUTHORS WITH MOST BOOKS #####
-# Aggregate to find authors total books
-# Get number of books by the same author
-# @app.get("/authorswithmostbooks")
-# async def get_authors_most_books():
-#     cursor = books_collection.aggregate([{"$group": {"_id": "$author", "count": { "$sum": 1 }}},{"$sort": { "count": -1 }},{"$limit": 5}])
-#     result = await cursor.to_list(length=None)
-#     return result if result else {"count": 0}   
+    return result[0] if result else {"total_books": 0} 
 
 # This version gets the stock of the author
 @app.get("/authorswithmostbooks")
@@ -56,12 +47,10 @@ async def get_authors_most_books():
     result = await cursor.to_list(length=None)
     return result if result else {"count": 0}
 
-##### TO DO #####
-##### FIGURE WHICH VERSION TO USE FOR BEST SELLING BOOK #####
 # This version finds books with the least stock to show it is the best selling book
 @app.get("/bestsellingbooks")
 async def get_best_selling_book():
-    cursor = books_collection.aggregate([{"$group": {"_id": "$title", "count": { "$sum": "$stock" }}},{"$sort": { "count": 1 }},{"$limit": 5}])
+    cursor = books_collection.aggregate([{"$group": {"_id": "$title", "count": { "$sum": "$sales" }}},{"$sort": { "count": -1 }},{"$limit": 5}])
     result = await cursor.to_list(length=None)
     return result if result else {"count": 0}
 
